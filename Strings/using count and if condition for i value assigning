@@ -1,0 +1,22 @@
+words = "chandni shaik is coming from alwal"
+words_split=words.split()
+result = []
+for word in words_split:
+    if len(word) > 3:
+        c = list(word)
+        i,j=0,2
+        count=0
+        while count<3:
+            if j < len(c):
+                c[i], c[j] = c[j], c[i]
+            i+=1
+            j+=1
+            count+=1
+            if i==2:
+                i=4
+                j=6
+        result.append(''.join(c))
+    else:
+        result.append(word)
+print(' '.join(result))
+#anchind aishk is micong omfr waall
