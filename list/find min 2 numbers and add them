@@ -1,0 +1,6 @@
+mylist=[-14, 15, -10, -11, -12, -13, 16, 17, 18, 19, 20]
+sum=0
+mylist.sort()
+print(mylist)
+sum=mylist[0]+mylist[1]
+print(sum)
