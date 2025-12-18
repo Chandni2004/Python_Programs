@@ -1,0 +1,10 @@
+class Addition:
+    def __init__(self,a,b,c=None):
+        self.a=a
+        self.b=b
+        self.c=c
+    def result(self):
+        self.c=self.a+self.b
+        return self.c
+obj=Addition(2,4)
+print(obj.result())

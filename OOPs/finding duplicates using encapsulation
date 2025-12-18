@@ -1,0 +1,17 @@
+class Counter:
+    def __init__(self, text):
+        self.__text = text            # private attribute
+        self.__counts = {}            # private attribute
+    def __count_chars(self):         # private method
+        for ch in self.__text:
+            if ch in self.__counts:
+                self.__counts[ch] += 1
+            else:
+                self.__counts[ch] = 1
+    def process(self):               # public method to trigger counting
+        self.__count_chars()
+    def show_counts(self):           # public method to access results
+        print("Character counts:", self.__counts)
+obj = Counter("chandni shaik")
+obj.process()
+obj.show_counts()

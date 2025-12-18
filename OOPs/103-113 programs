@@ -1,0 +1,133 @@
+#all programs
+class str_class:
+    def __init__(self,text=None,do_str=None,n_email=None,remove_char=None,non_vow_hash=None,insert_space=None,position_num=None,add_num=None,sort_alpha=None,leap=None):
+     if isinstance(text,str_class):
+            self.text = text.text
+            self.do_str = text.do_str
+            self.n_email = text.n_email
+            self.remove_char = text.remove_char
+            self.non_vow_hash = text.non_vow_hash
+            self.insert_space = text.insert_space
+            self.position_num = text.position_num
+            self.add_num = text.add_num
+            self.sort_alpha = text.sort_alpha
+            self.leap = text.leap
+
+     else:
+            self.text = text
+            self.do_str = do_str
+            self.n_email = n_email
+            self.remove_char = remove_char
+            self.non_vow_hash = non_vow_hash
+            self.insert_space = insert_space
+            self.position_num = position_num
+            self.add_num = add_num
+            self.sort_alpha = sort_alpha
+            self.leap = leap
+
+class subclass(str_class):
+    def long_word_hash(self):
+        result = []
+        for word in self.text.split():
+            if len(word) >= 5:
+                result.append('#' * len(word))
+            else:
+                result.append(word)
+        print(" ".join(result))
+
+class subclass1(subclass):
+      def capitalize_firlet(self):
+         do_cap = []
+         for i in self.do_str.split():
+             do_cap.append(i.title())
+         print(" ".join(do_cap))
+
+class subclass2(subclass1):
+    def extract_name_email(self):
+        str_index = self.n_email.index('@')
+        print(self.n_email[:str_index])
+
+class subclass3(subclass2):
+    def remove_repeat_char(self):
+        words = self.remove_char.split()
+        result_words = []
+
+        for word in words:
+            unique = []
+            new_word = ""
+            for ch in word:
+                if ch not in unique:
+                    unique.append(ch)
+                    new_word += ch
+            result_words.append(new_word)
+
+        final_result = " ".join(result_words)
+        print(final_result)
+class subclass4(subclass3):
+    def add_hash(self):
+        str = ""
+        for hash in self.non_vow_hash:
+            if hash not in ['a','e','i','o','u']:
+                str += "-"+hash+"-"
+            else:
+                str += hash
+        print(str)
+class subclass5(subclass4):
+    def ins_space(self):
+        str_spa = ""
+        for spa in self.insert_space:
+            if spa.isupper():
+                str_spa += " " + spa
+            else:
+                str_spa+=spa
+        print(str_spa[1:])
+class subclass6(subclass5):
+    def position(self):
+        rev = ""
+        for po_num in self.position_num:
+            rev += str(ord(po_num.lower())-96)+" "
+        print(rev)
+class subclass7(subclass6):
+    def add_num_str(self):
+        sum = 0
+        for num in self.add_num:
+            sum += int(num)
+        print(str(sum))
+class subclass8(subclass7):
+    def sort(self):
+        sort_list = sorted(self.sort_alpha.split())
+        print(sort_list)
+class subclass9(subclass8):
+    def leap_year(self):
+        re = list(map(int,self.leap.split("-")))
+        count = 0
+        for year in range(re[0],re[1]):
+            if year % 4 == 0:
+                #print(year)
+                count += 1
+        print(count)
+
+
+text = "Count the lowercase letters in the said list of words"
+do_str = "Red Green WHITE"
+n_email = "john@example.com"
+remove_char = "Red Green White"
+non_vow_hash = "Green"
+insert_space = "PythonExercises"
+position_num = "Python"
+add_num = ("234242342341", "2432342342")
+sort_alpha =  "Red Green Black White Pink"
+leap = "2000-2020"
+
+obj = subclass9(text,do_str,n_email,remove_char,non_vow_hash,insert_space,position_num,add_num,sort_alpha,leap)
+obj1 = subclass9(obj)
+obj1.long_word_hash()
+obj1.capitalize_firlet()
+obj1.extract_name_email()
+obj1.remove_repeat_char()
+obj1.add_hash()
+obj1.ins_space()
+obj1.position()
+obj1.add_num_str()
+obj1.sort()
+obj1.leap_year()

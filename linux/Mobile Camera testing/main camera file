@@ -1,0 +1,137 @@
+import subprocess
+import re
+import time
+import argparse
+class camera:
+    def devices(self):
+        try:
+            result = subprocess.run("adb devices", shell=True, capture_output=True)
+            if result.returncode == 0:
+                device = re.findall(r"\bdevice\b", result.stdout.decode())
+                print(device)
+                if device:
+                    result_camera_on = subprocess.run("adb shell am start -a android.media.action.IMAGE_CAPTURE", shell=True, capture_output=True)
+                    print(result_camera_on.stdout)
+                else:
+                    print("Failed to find device")
+        except Exception as e:
+            print("Error in devices():", e)
+        time.sleep(5)
+
+    def cam_capture(self):
+        try:
+            click_img = subprocess.run("adb shell input keyevent 27", shell=True, capture_output=True)
+            if click_img.returncode == 0:
+                print("Image Captured")
+            else:
+                print("Failed")
+        except Exception as e:
+            print("Error in cam_capture():", e)
+
+    def image_back(self):
+        try:
+            back_img = subprocess.run("adb shell input keyevent 4", shell=True, capture_output=True)
+            if back_img.returncode == 0:
+                print("Image Captured after move back")
+            else:
+                print("Failed")
+        except Exception as e:
+            print("Error in image_back():", e)
+        time.sleep(5)
+
+    def open_video(self):
+        try:
+            video_launch = subprocess.run("adb shell am start -a android.media.action.VIDEO_CAPTURE", shell=True, capture_output=True)
+            if video_launch.returncode == 0:
+                print("Video launched")
+            else:
+                print("Failed to launch")
+        except Exception as e:
+            print("Error in open_video():", e)
+        time.sleep(5)
+
+    def video_capture(self):
+        try:
+            click_video = subprocess.run("adb shell input keyevent 27", shell=True, capture_output=True)
+            if click_video.returncode == 0:
+                print("Video streaming")
+            else:
+                print("Failed")
+        except Exception as e:
+            print("Error in video_capture():", e)
+        time.sleep(5)
+
+    def video_back(self):
+        try:
+            for i in range(4):
+                back_img = subprocess.run("adb shell input keyevent 4", shell=True, capture_output=True)
+                if back_img.returncode == 0:
+                    print("video Captured after move back")
+                else:
+                    print("Failed")
+            time.sleep(5)
+        except Exception as e:
+            print("Error in video_back():", e)
+        time.sleep(5)
+
+    def dumpsys_cam(self):
+        try:
+            check_camera_devices = subprocess.run("adb shell dumpsys media.camera", shell=True, capture_output=True)
+            if check_camera_devices.returncode == 0:
+                print(f"Check Camera Devices: {check_camera_devices.stdout.decode()}")
+            else:
+                print("Failed")
+        except Exception as e:
+            print("Error in dumpsys_cam():", e)
+        time.sleep(2)
+
+    def logcat_cam(self):
+        try:
+            logcat = subprocess.run("adb logcat -d > log.txt", shell=True, capture_output=True)
+            if logcat.returncode == 0:
+                # logs = logcat.stdout.decode()
+                print("Filtered logcat output:")
+                # for line in logs.splitlines():
+                #     if "camera" in line.lower():
+                #         print(line)
+            else:
+                print("Failed to get logcat output")
+        except Exception as e:
+            print("Error in logcat_cam():", e)
+        time.sleep(2)
+
+    def cam_nodes(self):
+        try:
+            access_nodes = subprocess.run("adb shell ls -l /dev/video*", shell=True, capture_output=True)
+            if access_nodes.returncode == 0:
+                print(f"Access camera device nodes: {access_nodes.stdout.decode()}")
+            else:
+                print("Failed")
+        except Exception as e:
+            print("Error in cam_nodes():", e)
+
+
+    def cam_flip(self):
+        try:
+            parser = argparse.ArgumentParser(description="Automate ADB tap for switching camera")
+            parser.add_argument('--x', type=int, required=True, help='X coordinate of the camera switch button')
+            parser.add_argument('--y', type=int, required=True, help='Y coordinate of the camera switch button')
+            args = parser.parse_args()
+            adb_command = f'adb shell input tap {args.x} {args.y}'
+            print(f"Running: {adb_command}")
+            subprocess.run(adb_command,shell=True)
+        except Exception as e:
+            print("Error in cam_flip():", e)
+
+# Create object and call functions
+cam = camera()
+# cam.devices()
+# cam.cam_capture()
+# cam.image_back()
+# cam.open_video()
+# cam.video_capture()
+# cam.video_back()
+# cam.dumpsys_cam()
+# cam.logcat_cam()
+# cam.cam_nodes()
+# cam.cam_flip()

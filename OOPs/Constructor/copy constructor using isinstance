@@ -1,0 +1,14 @@
+class Person:
+    def __init__(self, name=None,age=None):
+        if isinstance(name,Person):
+            self.name = name.name
+            self.age = name.age
+        else:
+            self.name = name
+            self.age = age
+    def display_data(self):
+        print(self.name,self.age)
+Person1 = Person("vijaya",21)
+Person2 = Person(Person1)
+Person1.display_data()
+Person2.display_data()

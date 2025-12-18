@@ -1,0 +1,26 @@
+class str_class:
+    def __init__(self,remove_char=None):
+        if isinstance(remove_char,str_class):
+            self.remove_char=remove_char.remove_char
+        else:
+            self.remove_char=remove_char
+class subclass(str_class):
+    def remove_repeat_char(self):
+        words = self.remove_char.split()
+        result_words = []
+
+        for word in words:
+            unique = []
+            new_word = ""
+            for ch in word:
+                if ch not in unique:
+                    unique.append(ch)
+                    new_word += ch
+            result_words.append(new_word)
+
+        final_result = " ".join(result_words)
+        print(final_result)
+remove_char = "asdfghjkllllkjhgfdsa"
+obj = subclass(remove_char)
+obj1 = subclass(obj)
+obj1.remove_repeat_char()

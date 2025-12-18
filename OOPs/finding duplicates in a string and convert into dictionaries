@@ -1,0 +1,15 @@
+class Counter:
+    def __init__(self, text):
+        self.text = text
+        self.counts = {}
+    def count(self):
+        for ch in self.text:
+            if ch in self.counts:
+                self.counts[ch] += 1
+            else:
+                self.counts[ch] = 1
+    def show(self):
+        print(self.counts)
+obj = Counter("w3resource")
+obj.count()
+obj.show()

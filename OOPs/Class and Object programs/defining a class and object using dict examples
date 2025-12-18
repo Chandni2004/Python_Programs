@@ -1,0 +1,41 @@
+class Dictionary:
+    def __init__(self):
+        self.my_dict = {}  
+
+    def create_dict(self, data):
+        self.my_dict = data
+        print("Dictionary Created:", self.my_dict)
+
+    def add_key_value(self, key, value):
+        self.my_dict[key] = value
+        print(f"Added ({key}: {value}) to dictionary.")
+
+    def delete_key(self, key):
+        if key in self.my_dict:
+            del self.my_dict[key]
+            print(f"Deleted key '{key}' from dictionary.")
+        else:
+            print(f"Key '{key}' not found.")
+
+    def remove_key(self, key):
+        value = self.my_dict.pop(key, None)
+        if value is not None:
+            print(f"Removed key '{key}' with value '{value}'.")
+        else:
+            print(f"Key '{key}' not found.")
+
+    def show_dict(self):
+        print("Current Dictionary:", self.my_dict)
+        
+Pro = Dictionary()
+Pro.create_dict({"name": "Chandni", "city": "Hyderabad"})
+Pro.add_key_value("email", "chandni614ece@gmail.com")
+Pro.delete_key("city")
+Pro.remove_key("email")
+Pro.show_dict()
+
+# Dictionary Created: {'name': 'Chandni', 'city': 'Hyderabad'}
+# Added (email: chandni614ece@gmail.com) to dictionary.
+# Deleted key 'city' from dictionary.
+# Removed key 'email' with value 'chandni614ece@gmail.com'.
+# Current Dictionary: {'name': 'Chandni'}

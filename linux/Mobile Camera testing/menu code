@@ -1,0 +1,29 @@
+import camera
+while True:
+    menu_enter=int(input("Enter the number: "))
+    cam=camera.camera()
+    if menu_enter==1:
+        cam.devices()
+    elif menu_enter==2:
+        cam.cam_capture()
+    elif menu_enter==3:
+        cam.image_back()
+    elif menu_enter==4:
+        cam.open_video()
+    elif menu_enter==5:
+        cam.video_capture()
+    elif menu_enter==6:
+        cam.video_back()
+    elif menu_enter==7:
+        cam.cam_flip()
+    elif menu_enter==1:
+        cam.cam_devices()
+    elif menu_enter==8:
+        cam.dumpsys_cam()
+    elif menu_enter==9:
+        cam.logcat_cam()
+    elif menu_enter==10:
+        cam.cam_nodes()
+    elif menu_enter==0:
+        print("OK Bye")
+        break

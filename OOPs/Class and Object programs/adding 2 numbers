@@ -1,0 +1,11 @@
+class Addition:
+    def Add(self,a,b,c=None):
+        self.a=a
+        self.b=b
+        self.c=c
+    def result(self):
+        self.c=self.a+self.b
+        return self.c
+obj=Addition()
+obj.Add(2,4)
+print(obj.result())

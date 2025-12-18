@@ -1,0 +1,14 @@
+class Fruits:
+  def __init__(self,shape,taste):
+    self.shape=shape
+    self.taste=taste
+
+  def fun_shape(self):
+    print(f"shape is {self.shape}")
+
+  def fun_taste(self):
+    print(f"Taste is {self.taste}")
+    
+mango=Fruits("oval","sweet")
+mango.fun_shape()
+mango.fun_taste()

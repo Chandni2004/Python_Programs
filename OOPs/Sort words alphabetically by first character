@@ -1,0 +1,17 @@
+class Sorttxt:
+    def __init__(self,txt):
+        if isinstance(txt,Sorttxt):
+            self.txt = txt.txt
+        else:
+            self.txt = txt
+    def _display(self):
+        a = self.txt
+        c = a.split(" ")
+        b = sorted(c)
+        return b
+    def res(self):
+        print(self._display())
+obj = Sorttxt("Red Green Black White Pink")
+obj._display()
+obj.res()
+obj2 = Sorttxt(obj)

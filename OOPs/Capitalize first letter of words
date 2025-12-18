@@ -1,0 +1,16 @@
+class str_class:
+    def __init__(self,do_str=None):
+     if isinstance(do_str,str_class):
+            self.do_str = do_str.do_str
+     else:
+            self.do_str = do_str
+class subclass(str_class):
+      def capitalize_firlet(self):
+         do_cap = []
+         for i in self.do_str.split():
+             do_cap.append(i.title())
+         print(" ".join(do_cap))
+do_str = "red green WHITE"
+obj = subclass(do_str)
+obj1 = subclass(obj)
+obj1.capitalize_firlet()

@@ -1,0 +1,46 @@
+import re
+# seperate the ip and port from the given data
+a = "10.101.80.232:61103"
+a1, a2 = re.search(r"(\d{2}.\d{3}.\d{2}.\d{3}):(\d+)", a).groups()
+print(f"a1={a1}\na2={a2}")
+
+# 1. Extract file extensions from filenames
+# ip - "report.pdf image.jpeg script.py index.html"
+# op - ['pdf', 'jpeg', 'py', 'html']
+text="report.pdf image.jpeg script.py index.html"
+res=re.findall(r"\.([a-z]+)",text)
+print(res)
+# 2. Find all words with repeating consecutive letters
+# ip - "cool pool good bad"
+# op - ['o', 'o', 'o']
+text1="cool pool good bad"
+res1=re.findall(r'([a-zA-Z])\1',text1)
+print(res1)
+# 3. Validate a password but reject if it contains spaces
+text2="abcde#1233"
+if re.match(r'\S+\d+',text2):
+    print(True)
+else:
+    print(False)
+# 4. First and last character same
+# ip - ["abcba", "1221", "madam", "hello", "test"]
+# op - ['abcba', '1221', 'madam','test']
+text3=["abcba", "1221", "madam", "hello", "test"]
+words=[]
+for w in text3:
+    if re.search(r"^(.).*\1$",w):
+        words.append(w)
+print(words)
+# 5. Palindromic numbers (len ≥ 3)
+# ip - "121 454 12321 456"
+# op - ['121', '454', '12321']
+text4="121 454 12321 456"
+result=[]
+for num in text4.split():
+    if re.match(r'\d+',text4):
+        if num==num[::-1] and len(num)>=3:
+            result.append(num)
+print(result)
+        
+
+

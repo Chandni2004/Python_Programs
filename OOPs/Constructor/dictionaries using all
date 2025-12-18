@@ -1,0 +1,29 @@
+class StudentRecords:
+    def __init__(self, ids=None, names=None, scores=None,other=None):
+        if isinstance(other,StudentRecords):
+            self.ids = other.ids.copy()
+            self.names = other.names.copy()
+            self.scores = other.scores.copy()
+            self.nested_dict = other.nested.copy()
+        else:
+            self.ids = ids
+            self.names = names
+            self.scores = scores
+            self.nested_dict = []    
+        
+    def create_nested_dict(self):
+        for i in range(len(self.ids)):
+            self.nested_dict.append({self.ids[i]: {self.names[i]: self.scores[i]}})
+    def display(self):
+        # print("Nested dictionary:")
+        print(self.nested_dict)
+
+ids = ['S001', 'S002', 'S003', 'S004']
+names = ['Chandni', 'Vijaya', 'Manasa', 'Victoria']
+scores = [85, 98, 89, 92]
+
+record1 =StudentRecords(ids, names, scores)
+record1.create_nested_dict()
+record2=StudentRecords(other=record1)
+record1.display()
+record2.display()

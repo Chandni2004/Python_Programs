@@ -1,0 +1,19 @@
+class str_class:
+    def __init__(self,non=None):
+        if isinstance(non,str_class):
+            self.non = non.non
+        else:
+            self.non = non
+class subclass(str_class):
+    def add_hash(self):
+        str = ""
+        for hash in self.non:
+            if hash not in ['a','e','i','o','u']:
+                str += "-"+hash+"-"
+            else:
+                str += hash
+        print(str)
+non= "Green"
+obj = subclass(non)
+obj1 = subclass(obj)
+obj1.add_hash()

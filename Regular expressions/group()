@@ -1,0 +1,14 @@
+import re
+
+text = "Date: 2025-07-22"
+match = re.search(r'Date: (\d{4})-(\d{2})-(\d{2})', text)
+
+if match:
+    print(match.group())
+    
+# output: Date: 2025-07-22
+
+text = "name:vijaya,month:9876"
+match = re.search(r"name:(\w+),month:(\d+)", text)
+print(match.group())
+# output:name:vijaya,month:9876

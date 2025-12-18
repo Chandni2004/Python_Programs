@@ -1,0 +1,10 @@
+import re
+string = input("Enter a string: ")
+pattern = r'^[a-zA-Z0-9]+$'
+if re.fullmatch(pattern, string):
+    print("Valid: String contains only letters and digits.")
+else:
+    print("Invalid: String contains other characters.")
+
+# output: Enter a string: chandni1233
+# Valid: String contains only letters and digits.

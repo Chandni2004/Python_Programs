@@ -1,0 +1,20 @@
+class str_class:
+    def __init__(self,text):
+        if isinstance(text,str_class):
+            self.text = text.text
+        else:
+            self.text = text
+class subclass(str_class):
+    def long_word_hash(self):
+         result = []
+         for word in self.text.split():
+             if len(word) >= 5:
+                 result.append('#' * len(word))
+             else:
+                 result.append(word)
+         print(" ".join(result))
+text = "Count the lowercase letters in the said list of words"
+obj = subclass(text)
+obj.long_word_hash()
+obj1 = subclass(obj)
+obj1.long_word_hash()

@@ -1,0 +1,16 @@
+class Person:
+    def __init__(self, name="Guest", age=18):
+        self.name = name
+        self.age = age
+
+    def display(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
+p1 = Person()
+p1.display()
+
+p2 = Person("Chandni")
+p2.display()
+
+p3= Person("Vijaya", 21)
+p3.display()

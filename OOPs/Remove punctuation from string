@@ -1,0 +1,19 @@
+class str_class:
+    def __init__(self, text):
+        if isinstance(text, str_class):
+            self.text = text.text
+        else:
+            self.text = text
+class subclass(str_class):
+    def remove_punctuation(self):
+        punctuations = '''!()-[]{};:'",<>./?@#$%^&*_~\\'''
+        no_punct = ""
+        for ch in self.text:
+            if ch not in punctuations:
+                no_punct += ch
+        print(no_punct)
+text = "String! With. Punctuation?"
+obj = subclass(text)
+obj.remove_punctuation()
+obj1 = subclass(obj)
+obj1.remove_punctuation()
