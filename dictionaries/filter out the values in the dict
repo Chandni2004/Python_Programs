@@ -1,0 +1,8 @@
+mydict={"maths": 70,"physics": 80,"english": 90,"sanskrit": 60,"chemistry": 65}
+result={}
+for values in mydict:
+    if mydict[values] >= 70:
+        result[values] = mydict[values]
+print(result)
+
+#{'maths': 70, 'physics': 80, 'english': 90}
