@@ -1,0 +1,8 @@
+text = input("Enter a string: ")
+repeated = {}
+for char in text:
+    if text.count(char) > 1:
+        repeated[char] = text.count(char)
+print("Repeated characters with counts:")
+for char, count in repeated.items():
+    print(char,":",count)
