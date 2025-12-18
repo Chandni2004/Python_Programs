@@ -1,0 +1,17 @@
+height = 7
+width = 5
+
+for row in range(height):
+    for col in range(width):
+        # Print '*' if:
+        # - First column (vertical line of E)
+        # - Top row
+        # - Middle row
+        # - Bottom row
+        if col == 0:
+            print('*', end='')
+        elif row == 0 or row == height // 2 or row == height - 1:
+            print('*', end='')
+        else:
+            print(' ', end='')
+    print()
