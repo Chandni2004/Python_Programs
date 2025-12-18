@@ -1,0 +1,7 @@
+def info(name="Unknown", age=0):
+    print("Name:", name)
+    print("Age:", age)
+
+info()                      # Output: Name: Unknown  Age: 0
+info("Vijaya")              # Output: Name: Vijaya   Age: 0
+info("Chandni", 21)         # Output: Name: Chandni  Age: 21
