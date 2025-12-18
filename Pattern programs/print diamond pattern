@@ -1,0 +1,13 @@
+rows = 5  # Number of maximum stars in the middle row
+
+# Upper part of the diamond
+for i in range(1, rows + 1):
+    for j in range(i):
+        print('*', end=' ')
+    print()
+
+# Lower part of the diamond
+for i in range(rows - 1, 0, -1):
+    for j in range(i):
+        print('*', end=' ')
+    print()
