@@ -1,0 +1,11 @@
+start=int(input("Enter start year: "))
+end=int(input("Enter end year: "))
+count = 0
+for year in range(start, end + 1):
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        count += 1
+print(start, "and", end, "is:",count)
+
+# Enter start year: 2104
+# Enter end year: 2204
+# 2104 and 2204 is: 25
