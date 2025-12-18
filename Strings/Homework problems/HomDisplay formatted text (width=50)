@@ -1,0 +1,5 @@
+import textwrap
+text = input("Enter a paragraph of text: ")
+formatted_text = textwrap.fill(text, width=50)
+print("\nFormatted Text:")
+print(formatted_text)
