@@ -1,0 +1,8 @@
+s1 = input("Enter first number as string: ")
+s2 = input("Enter second number as string: ")
+
+if s1.isdigit() and s2.isdigit():
+    result = int(s1) + int(s2)
+    print(result)
+else:
+    print("Error in input!")
