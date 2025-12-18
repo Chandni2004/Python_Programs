@@ -1,0 +1,83 @@
+def arithmetic_operators(a, b):
+    print(" Arithmetic Operators:")
+    print("a + b =", a + b)
+    print("a - b =", a - b)
+    print("a * b =", a * b)
+    print("a / b =", a / b)
+    print("a % b =", a % b)
+    print("a ** b =", a ** b)
+    print("a // b =", a // b)
+
+def assignment_operators():
+    print("\n Assignment Operators:")
+    x = 5
+    print("Initial x =", x)
+    x += 2
+    print("x += 2:", x)
+    x -= 1
+    print("x -= 1:", x)
+    x *= 3
+    print("x *= 3:", x)
+    x /= 2
+    print("x /= 2:", x)
+    x %= 3
+    print("x %= 3:", x)
+    x **= 2
+    print("x **= 2:", x)
+    x //= 2
+    print("x //= 2:", x)
+
+def comparison_operators(a, b):
+    print("\n Comparison Operators:")
+    print("a == b:", a == b)
+    print("a != b:", a != b)
+    print("a > b:", a > b)
+    print("a < b:", a < b)
+    print("a >= b:", a >= b)
+    print("a <= b:", a <= b)
+
+def logical_operators(a, b):
+    print("\n Logical Operators:")
+    print("a > 5 and b < 5:", a > 5 and b < 5)
+    print("a < 5 or b < 5:", a < 5 or b < 5)
+    print("not(a > 5):", not(a > 5))
+
+def bitwise_operators(a, b):
+    print("\n Bitwise Operators:")
+    print("a & b =", a & b)
+    print("a | b =", a | b)
+    print("a ^ b =", a ^ b)
+    print("~a =", ~a)
+    print("a << 1 =", a << 1)
+    print("a >> 1 =", a >> 1)
+
+def membership_operators(a_list):
+    print("\n Membership Operators:")
+    print("10 in list:", 10 in a_list)
+    print("5 not in list:", 5 not in a_list)
+
+def identity_operators():
+    print("\n Identity Operators:")
+    x = [1, 2, 3]
+    y = [1, 2, 3]
+    z = x
+    print("x is z:", x is z)         # Same object
+    print("x is y:", x is y)         # Different objects
+    print("x == y:", x == y)         # Same values
+    print("x is not y:", x is not y)
+
+def main():
+    a = 10
+    b = 3
+    my_list = [1, 2, 3, 10]
+
+    arithmetic_operators(a, b)
+    assignment_operators()
+    comparison_operators(a, b)
+    logical_operators(a, b)
+    bitwise_operators(a, b)
+    membership_operators(my_list)
+    identity_operators()
+
+if __name__ == "__main__":
+    main()
