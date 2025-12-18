@@ -1,0 +1,4 @@
+mylist=list(map(int,input("Enter the numbers of the list:").split()))
+n=int(input("Enter the numbers to find:"))
+min_numbers = sorted(mylist)[:n]
+print("Minimum", n, "numbers are:", min_numbers)
