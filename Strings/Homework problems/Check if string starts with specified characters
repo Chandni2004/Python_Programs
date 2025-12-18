@@ -1,0 +1,3 @@
+string = input("Enter the string: ")
+start = input("Enter the starting text to check: ")
+print(string.startswith(start))
