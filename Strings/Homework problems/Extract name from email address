@@ -1,0 +1,4 @@
+email = input("Enter your email address: ")
+name_part = email.split('@')[0]       
+new_name = name_part.replace('.', '') 
+print("Extracted name:", new_name)
