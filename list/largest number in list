@@ -1,0 +1,3 @@
+my_list = [1, 7, 6, 4, 5]
+largest=max(my_list)
+print("Largest of all items in the list:",largest)
