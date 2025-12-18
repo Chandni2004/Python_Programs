@@ -1,0 +1,5 @@
+n=134543
+Descending="".join(sorted(str(n),reverse=True))
+Ascending="".join(sorted(str(n)))
+print(Descending)
+print(Ascending)
