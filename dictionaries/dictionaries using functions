@@ -1,0 +1,70 @@
+def sort_dict_by_value(d):
+    print("Ascending:", dict(sorted(d.items(), key=lambda x: x[1])))
+    print("Descending:", dict(sorted(d.items(), key=lambda x: x[1], reverse=True)))
+
+def add_key_to_dict(d, key, value):
+    d[key] = value
+    print("Updated Dictionary:", d)
+
+def concatenate_dicts(*dicts):
+    result = {}
+    for dic in dicts:
+        result.update(dic)
+    print("Concatenated Dictionary:", result)
+
+def check_key_exists(d, key):
+    print(f"Key {key} exists:" if key in d else f"Key {key} does not exist.")
+
+def iterate_dict(d):
+    for key, value in d.items():
+        print(f"{key}: {value}")
+
+def generate_squares(n):
+    print({x: x*x for x in range(1, n+1)})
+
+def squares_1_to_15():
+    print({x: x*x for x in range(1, 16)})
+
+def merge_dicts(d1, d2):
+    merged = {**d1, **d2}
+    print("Merged Dictionary:", merged)
+
+def iterate_alternative(d):
+    for key in d:
+        print(f"{key}: {d[key]}")
+
+def sum_dict_items(d):
+    print("Sum of values:", sum(d.values()))
+
+def run_all_operations():
+    print("1. Sort Dictionary by Value")
+    sort_dict_by_value({'a': 3, 'b': 1, 'c': 2})
+
+    print("\n2. Add Key to Dictionary")
+    add_key_to_dict({0: 10, 1: 20}, 2, 30)
+
+    print("\n3. Concatenate Dictionaries")
+    concatenate_dicts({1:10, 2:20}, {3:30, 4:40}, {5:50,6:60})
+
+    print("\n4. Check Key Existence in Dictionary")
+    check_key_exists({'a': 1, 'b': 2}, 'a')
+
+    print("\n5. Iterate Over Dictionary Using For Loops")
+    iterate_dict({'x': 100, 'y': 200})
+
+    print("\n6. Generate Dictionary of Numbers and Their Squares")
+    generate_squares(5)
+
+    print("\n7. Dictionary with Keys 1 to 15 and Their Squares")
+    squares_1_to_15()
+
+    print("\n8. Merge Two Python Dictionaries")
+    merge_dicts({'a': 1, 'b': 2}, {'b': 3, 'c': 4})
+
+    print("\n9. Iterate Over Dictionaries (Alternative)")
+    iterate_alternative({'one': 1, 'two': 2})
+
+    print("\n10. Sum All Items in a Dictionary")
+    sum_dict_items({'x': 10, 'y': 20, 'z': 30})
+    
+run_all_operations()
