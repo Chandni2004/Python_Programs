@@ -1,8 +1,0 @@
-my_dict={1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
-key=int(input("Enter the key to delete: "))
-if key in my_dict:
-    del my_dict[key]
-    print("Key",key,"deleted successfully.")
-else:
-    print("Key",key, "not found in the dictionary.")
-print("Updated dictionary:", my_dict)
