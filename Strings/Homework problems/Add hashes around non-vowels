@@ -1,0 +1,12 @@
+string=input("Enter the string: ")
+vowels="aeiouAeiou"
+result=""
+for ch in string:
+    if ch in vowels:
+        result+=ch
+    else:
+        result+="-"+ch+"-"
+print(result)
+
+# Enter the string: Green
+# -G--r-ee-n-
