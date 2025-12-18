@@ -1,0 +1,10 @@
+def to_uppercase(str1):
+    num_upper = 0
+    for letter in range(min(4, len(str1))):
+        if str1[letter].isupper():
+            num_upper += 1
+    if num_upper >= 2:
+        return str1.upper()
+    return str1
+print(to_uppercase('Chandni'))
+print(to_uppercase('PyThon'))
