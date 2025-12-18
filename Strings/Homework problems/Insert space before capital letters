@@ -1,0 +1,12 @@
+text="PythonProgramming"
+print(text)
+result=" "
+for ch in text:
+    if ch.isupper():
+        result+=" "+ch
+    else:
+        result+=ch
+print(result.strip())
+
+# PythonProgramming
+# Python Programming
