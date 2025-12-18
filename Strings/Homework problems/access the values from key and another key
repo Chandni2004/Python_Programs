@@ -1,0 +1,19 @@
+my_dict = {
+    1: ['a', 'b', 'c'],
+    2: ['d', 'e', 'f'
+}
+list1 = my_dict[1]
+list2 = my_dict[2]
+for i in list1:
+    for j in list2:
+        print(i, j)
+        
+# a d
+# a e
+# a f
+# b d
+# b e
+# b f
+# c d
+# c e
+# c f
