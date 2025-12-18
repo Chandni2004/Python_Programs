@@ -1,0 +1,5 @@
+person = ("Chandni", 20, "Engineer")
+name, age, job = person
+print(name)
+print(age)
+print(job)

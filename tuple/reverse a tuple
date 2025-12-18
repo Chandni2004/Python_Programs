@@ -1,0 +1,4 @@
+my_tuple=('a','b','c')
+print(my_tuple[::-1])#('c', 'b', 'a')
+my_tuple=("String")
+print(my_tuple[::-1])#gnirtS

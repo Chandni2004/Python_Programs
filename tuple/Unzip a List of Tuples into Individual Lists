@@ -1,0 +1,8 @@
+pairs = [(1, 'a'), (2, 'b'), (3, 'c')]
+list1 = []
+list2 = []
+for t in pairs:
+    list1.append(t[0])
+    list2.append(t[1])
+print(list1)
+print(list2)
