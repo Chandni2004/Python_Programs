@@ -1,0 +1,141 @@
+class Base:
+    def __init__(self, data=None):
+        if isinstance(data, Base):
+            self.data = data.data
+        else:
+            self.data = data
+
+# 1. Sort Text
+class SortText(Base):
+    def sort_words(self):
+        try:
+            words = self.data.split()
+            sorted_words = sorted(words)
+            print("Sorted Words:", sorted_words)
+        except Exception as e:
+            print("Sort Error:", e)
+
+# 2. Extract name from email
+class EmailName(SortText):
+    def extract_name(self):
+        try:
+            name = self.data.split('@')[0].replace('.', '')
+            print("Extracted Name:", name)
+        except Exception as e:
+            print("Email Error:", e)
+
+# 3. Leap Year Count
+class LeapYear(EmailName):
+    def count_leap_years(self):
+        try:
+            start, end = map(int, self.data.split("-"))
+            count = 0
+            for year in range(start, end + 1):
+                if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+                    count += 1
+                    print(year, end=' ')
+            print("\nTotal Leap Years:", count)
+        except Exception as e:
+            print("Leap Year Error:", e)
+
+# 4. Capitalize words
+class Capitalize(Base):
+    def capitalize_words(self):
+        try:
+            capitalized = ' '.join(word.title() for word in self.data.split())
+            print("Capitalized:", capitalized)
+        except Exception as e:
+            print("Capitalize Error:", e)
+
+# 5. Add two numeric strings
+class StringAdder(Capitalize):
+    def __init__(self, num1=None, num2=None):
+        if isinstance(num1, StringAdder):
+            self.num1 = num1.num1
+            self.num2 = num1.num2
+        else:
+            self.num1 = num1
+            self.num2 = num2
+
+    def add_strings(self):
+        try:
+            print("Sum:", str(int(self.num1) + int(self.num2)))
+        except Exception as e:
+            print("Addition Error:", e)
+
+# 6. Add hash around non-vowels
+class HashNonVowels(LeapYear,Capitalize):
+    def add_hash(self):
+        try:
+            result = ''
+            for ch in self.data:
+                if ch.lower() not in 'aeiou':
+                    result += f'-{ch}-'
+                else:
+                    result += ch
+            print("With Hashes:", result)
+        except Exception as e:
+            print("Hash Error:", e)
+
+print("Sorted Words:")
+obj1 = SortText("Red Green Black White Pink")
+obj1.sort_words()
+copy_obj1=SortText(obj1)
+copy_obj1.sort_words()
+
+print("\nExtracted Name from Email:")
+obj2 = EmailName("chandniece614@gmail.com")
+obj2.extract_name()
+copy_obj2=EmailName(obj2)
+copy_obj2.extract_name()
+
+print("\nLeap Years:")
+obj3 = LeapYear("1990-2000")
+obj3.count_leap_years()
+copy_obj3=LeapYear(obj3)
+copy_obj3.count_leap_years()
+
+print("\nCapitalized Words:")
+obj4 = Capitalize("red green WHITE")
+obj4.capitalize_words()
+copy_obj4=Capitalize(obj4)
+copy_obj4.capitalize_words()
+
+print("\nAdd Numeric Strings:")
+obj5 = StringAdder("12345", "67890")
+obj5.add_strings()
+copy_obj5=StringAdder(obj5)
+copy_obj5.add_strings()
+
+print("\nHash Non-Vowels:")
+obj6 = HashNonVowels("Green")
+obj6.add_hash()
+copy_obj6=HashNonVowels(obj6)
+copy_obj6.add_hash()
+
+# Output:
+# Sorted Words:
+# Sorted Words: ['Black', 'Green', 'Pink', 'Red', 'White']
+# Sorted Words: ['Black', 'Green', 'Pink', 'Red', 'White']
+
+# Extracted Name from Email:
+# Extracted Name: chandniece614
+# Extracted Name: chandniece614
+
+# Leap Years:
+# 1992 1996 2000 
+# Total Leap Years: 3
+# 1992 1996 2000 
+# Total Leap Years: 3
+
+# Capitalized Words:
+# Capitalized: Red Green White
+# Capitalized: Red Green White
+
+# Add Numeric Strings:
+# Sum: 80235
+# Sum: 80235
+
+# Hash Non-Vowels:
+# With Hashes: -G--r-ee-n-
+# With Hashes: -G--r-ee-n-

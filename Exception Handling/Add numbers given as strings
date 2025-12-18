@@ -1,0 +1,20 @@
+class StringNumberSum:
+    def __init__(self, num1=None, num2=None):
+        if isinstance(num1, StringNumberSum):
+            self.num1 = num1.num1
+            self.num2 = num1.num2
+        else:
+            self.num1=num1
+            self.num2=num2
+   
+class StringNumberSumCopy(StringNumberSum):
+    def get_sum(self):
+        try:
+            return str(int(self.num1) + int(self.num2))
+        except exception as e:
+            print(e)
+obj1 = StringNumberSumCopy("234242342341", "2432342342")
+print("Sum from obj1:", obj1.get_sum())  # Output: 236674684683
+
+obj2 = StringNumberSumCopy(obj1)
+print("Sum from obj2 (copied):", obj2.get_sum())  # Output: 236674684683

@@ -1,0 +1,67 @@
+# ------------- showing mro in this code, taking two same methods in Academic info class & contact info class---------------
+
+class Person:
+    def __init__(self, name=None, age=None,gender=None):
+        if isinstance(name,Person):
+            self.name = name.name
+            self.age = name.age
+            self.gender = name.gender
+        else:
+            self.name = name
+            self.age = age
+            self.gender = gender
+    def show_person(self):
+        print(self.name, self.age, self.gender)
+
+class Academic_info(Person):
+    def __init__(self, grades_dict,name, age, gender):
+        super().__init__(name,age,gender)
+        if isinstance(grades_dict,Academic_info):
+            self.grades_dict = grades_dict.grades_dict
+        else:
+            self.grades_dict = grades_dict
+
+    def calculate_average_mro(self):
+        try:
+            total_marks = sum(self.grades_dict.values())
+            total_av_marks = total_marks / len(self.grades_dict)
+            #print(total_av_marks)
+            if total_av_marks >= 65:
+                print(f'{self.name} have passed with the grade of {total_av_marks}')
+            else:
+                print(f'{self.name} have failed with the grade of {total_av_marks}')
+        except Exception as e:
+            print(e)
+
+class contact_info(Person):
+    def __init__(self,name, age, gender,email=None,phone_num=None):
+        super().__init__(name, age, gender)
+        if isinstance(email,contact_info):
+            self.email = email.email
+            self.phone_num = email.phone_num
+        else:
+            self.email = email
+            self.phone_num = phone_num
+
+    def calculate_average_mro(self):
+        print(self.email,self.phone_num)
+
+class student(Academic_info,contact_info):
+    def __init__(self, name=None, age=None, gender=None, grades_dict=None, email=None, phone_num=None):
+        if isinstance(name,student):
+            Academic_info.__init__(self, name.grades_dict, name.name, name.age, name.gender)
+            contact_info.__init__(self, name.name, name.age, name.gender, name.email, name.phone_num)
+        else:
+            Academic_info.__init__(self,grades_dict,name, age, gender)
+            contact_info.__init__(self, name, age, gender, email, phone_num)
+
+    def show_result(self):
+        self.calculate_average_mro()
+        contact_info.calculate_average_mro(self)
+        self.show_person()
+
+student1 = student(name="vicky",age=20,gender='female',grades_dict={'sub1':85,'sub2':85,'sub3':90,'sub4':90,'sub5':90},email='dusivicky@gmail.com',phone_num='7670949175')
+student1.show_result()
+obj_copy = student(student1)
+obj_copy.show_result()
+print(student.__mro__)

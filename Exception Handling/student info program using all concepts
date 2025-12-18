@@ -1,0 +1,105 @@
+class Person:
+    def __init__(self,name=None,age=None,gender=None):
+        if isinstance(name,Person):
+            self.name=name.name
+            self.age=name.age
+            self.gender=name.gender
+        else:
+            self.name=name
+            self.age=age
+            self.gender=gender
+    def _person_info(self):
+        print(f"Name: {self.name},Age: {self.age},Gender: {self.gender}")
+        
+class Academic(Person):
+    def __init__(self,name=None,age=None,gender=None,grades=None,average=None,total_marks=None):
+        super().__init__(name, age, gender)
+        if isinstance(grades,Academic):
+            self.grades=grades.grades
+            self.average=grades.average
+            self.total_marks=grades.total_marks
+        else:
+            self.grades=0
+            self.average=0
+            self.total_marks=0
+            
+    def logic(self):
+        try:
+            self.grades={'ET':85,'SS':80,'NT':70,'EMI':75,'STLD':90}
+            self.total_marks=0
+            for mark in self.grades.values():
+                self.total_marks+=mark
+            self.average=self.total_marks/len(self.grades)
+        except Exception as e:
+            print(e)
+            
+    def _academic_info(self):
+        print(f"Grades: {self.grades},Average: {self.average},Total Marks: {self.total_marks}")
+    
+    # def marks(self):
+        # self._academic_info()
+        
+class Contact(Person):
+    def __init__(self,name=None,age=None,gender=None,email=None,phone=None,hobbies=None):
+        super().__init__(name, age, gender)
+        if isinstance(email,Contact):
+            self.email=email.email
+            self.phone=email.phone
+            self.hobbies=email.hobbies
+        else:
+            self.email=email
+            self.phone=phone
+            self.hobbies=hobbies
+    def _contact_info(self):
+        print(f"Email: {self.email},PhNo: {self.phone},Hobbies: {self.hobbies}")
+        
+class Student(Academic,Contact):
+    def __init__(self,name=None,age=None,gender=None,grades=None,average=None,total_marks=None,email=None,phone=None,hobbies=None,result=None):
+        if isinstance(name,Student):
+            Academic.__init__(self, name.name, name.age, name.gender,name.grades, name.average, name.total_marks)
+            Contact.__init__(self, name.name, name.age, name.gender,name.email, name.phone, name.hobbies)
+            
+        else:
+            Academic.__init__(self, name, age, gender, grades, average, total_marks)
+            Contact.__init__(self, name, age, gender, email, phone, hobbies)
+    def _student_info(self):
+        self.logic()    
+        self._academic_info()
+        if self.total_marks>=250:
+            print(f"{self.name} passed with {self.total_marks}")
+        else:
+            print(f"{self.name} failed with {self.total_marks}")
+
+obj1=Person('Chandni',20,'Female')
+obj1._person_info()
+copy_obj1=Person(obj1)
+copy_obj1._person_info()
+    
+obj2=Academic('Chandni',20,'Female')
+obj2.logic()
+copy_obj2=Academic(obj2)
+copy_obj2.logic()
+
+obj3=Contact('Chandni',20,'Female','chandni614@gmail.com',8019762949,'Watching TV')
+obj3._contact_info()
+    
+obj4=Student(name='Chandni',age=20,gender='Female',email='chandni614@gmail.com',phone=8019762949,hobbies='Watching TV')
+obj4._contact_info()
+obj4._student_info()
+copy_obj4=Student(obj4)
+copy_obj4._student_info()
+
+
+
+# output:
+# Name: Chandni,Age: 20,Gender: Female
+# Name: Chandni,Age: 20,Gender: Female
+# Email: chandni614@gmail.com,PhNo: 8019762949,Hobbies: Watching TV
+# Email: chandni614@gmail.com,PhNo: 8019762949,Hobbies: Watching TV
+# Grades: {'ET': 85, 'SS': 80, 'NT': 70, 'EMI': 75, 'STLD': 90},Average: 80.0,Total Marks: 400
+# Chandni passed with 400
+# Grades: {'ET': 85, 'SS': 80, 'NT': 70, 'EMI': 75, 'STLD': 90},Average: 80.0,Total Marks: 400
+# Chandni passed with 400
+
+
+

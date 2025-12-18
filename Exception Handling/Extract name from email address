@@ -1,0 +1,17 @@
+class str_class:
+    def __init__(self,email=None):
+        if isinstance(email,str_class):
+            self.email = email.email
+        else:
+            self.email = email
+class subclass(str_class):
+    def extract_name_email(self):
+        try:
+            str_index = self.email.index('@')
+            print(self.email[:str_index])
+        except Exception as e:
+            print(e)
+email = "chandniece614@gmail.com"
+obj=subclass(email)
+obj1=subclass(obj)
+obj1.extract_name_email()

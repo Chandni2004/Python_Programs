@@ -1,0 +1,19 @@
+class Capital:
+    def __init__(self,first=None):
+        if isinstance(first,Capital):
+            self.first=first.first
+        else:
+            self.first=first
+class Letter(Capital):
+    def capitalize(self):
+        try:
+            do_cap = []
+            for i in self.first.split():
+                do_cap.append(i.title())
+            print(" ".join(do_cap))
+        except Exception as e:
+            print(e)
+first = "red green WHITE"
+obj = Letter(first)
+obj1 = Letter(obj)
+obj1.capitalize()

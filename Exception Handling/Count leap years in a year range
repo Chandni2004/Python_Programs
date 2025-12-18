@@ -1,0 +1,21 @@
+class str_class:
+    def __init__(self,leap=None):
+     if isinstance(leap,str_class):
+            self.leap = leap.leap
+     else:
+         self.leap = leap
+class subclass(str_class):
+    def leap_year(self):
+        try:
+            re = list(map(int,self.leap.split("-")))
+            count = 0
+            for year in range(re[0],re[1]):
+                if year % 4 == 0:
+                    print(year)
+                    count += 1
+            print(count)
+        except Exception as e:
+            print(e)
+leap = "1990-2000"
+obj = subclass(leap)
+obj.leap_year()
