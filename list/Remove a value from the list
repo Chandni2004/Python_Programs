@@ -1,0 +1,3 @@
+list=['Ricky Rivera', 98, 'Math', 90, 'Science']
+list.remove('Math')
+print(list)
