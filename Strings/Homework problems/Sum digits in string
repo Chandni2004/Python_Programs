@@ -1,0 +1,5 @@
+num="113350"
+result=0
+for n in num:
+  result=result+int(n)
+print(result)
