@@ -1,0 +1,11 @@
+text = "Count the lowercase letters in the said list of words"
+words = text.split()
+result = []
+for word in words:
+    if len(word) >= 5:
+        result.append('#' * len(word))
+    else:
+        result.append(word)
+final_output = ' '.join(result)
+print(text)
+print(final_output)
