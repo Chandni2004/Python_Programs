@@ -1,0 +1,5 @@
+text="Black Red Green White Pink"
+words = text.split()
+sorted_words = sorted(words)
+sorted_string = ' '.join(sorted_words)
+print(sorted_string)
