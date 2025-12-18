@@ -1,0 +1,13 @@
+words = "chandni shaik is coming from alwal"
+word_list = words.split()
+replaced = []
+for word in word_list:
+    if len(word) > 3:
+        chars = list(word)
+        chars[0], chars[2] = chars[2], chars[0]
+        replaced.append(''.join(chars))
+    else:
+        replaced.append(word)
+result = ' '.join(replaced)
+print(result)
+#ahcndni ahsik is mocing orfm wlaal
