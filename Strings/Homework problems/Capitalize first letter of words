@@ -1,0 +1,7 @@
+string="python is easy"
+splitted=string.split()
+result=" "
+print(splitted)
+for word in splitted:
+    result+=word.capitalize()+" "
+print(result)
