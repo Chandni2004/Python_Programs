@@ -1,0 +1,10 @@
+str1 = input("Enter first string: ")
+str2 = input("Enter second string: ")
+result = ""
+for char in str1:
+    if char not in str2 and char not in result:
+        result += char
+for char in str2:
+    if char not in str1 and char not in result:
+        result += char
+print("Concatenated uncommon characters:", result)
