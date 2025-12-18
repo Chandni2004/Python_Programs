@@ -1,0 +1,12 @@
+total = 0
+count = 0
+for _ in range(1000):  
+    num = int(input("Enter a number: "))
+    if num == 0:
+        break
+    total += num
+    count += 1
+if count>=1:
+    average = total / count
+    print("\nSum =", total)
+    print("Average =" ,average)
