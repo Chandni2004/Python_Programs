@@ -1,0 +1,12 @@
+text = input("Enter a string: ")
+single_chars = ""
+multiple_chars = ""
+for char in text:
+    if text.count(char) == 1:
+        if char not in single_chars:
+            single_chars += char
+    else:
+        if char not in multiple_chars:
+            multiple_chars += char
+print("Characters that occur only once:", single_chars)
+print("Characters that occur multiple times:", multiple_chars)
