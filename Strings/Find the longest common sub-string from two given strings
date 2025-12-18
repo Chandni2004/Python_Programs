@@ -1,0 +1,15 @@
+str1 = input("Enter first string: ")
+str2 = input("Enter second string: ")
+longest_substring = ""
+max_length = 0
+for i in range(len(str1)):
+    current_substring = ""
+    for j in range(i, len(str1)):
+        current_substring += str1[j]  
+        if current_substring in str2:
+            if len(current_substring) > max_length:
+                max_length = len(current_substring)
+                longest_substring = current_substring
+        else:
+            break 
+print("Longest common substring:", longest_substring)
