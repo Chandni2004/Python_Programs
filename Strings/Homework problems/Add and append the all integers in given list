@@ -1,0 +1,5 @@
+num=[11,33,50]
+result=""
+for n in num:
+  result=result+str(n)
+print(result)
