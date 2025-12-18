@@ -1,0 +1,8 @@
+text = "String! With. Punctuation?"
+print(text)
+punctuations = '''!()-[]{};:'",<>./?@#$%^&*_~\\'''
+no_punct = ""
+for ch in text:
+    if ch not in punctuations:
+        no_punct += ch
+print(no_punct)
