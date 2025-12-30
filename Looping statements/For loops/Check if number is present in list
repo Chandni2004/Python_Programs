@@ -1,0 +1,5 @@
+l = [10, 20, 30]
+n = 20
+for i in l:
+    if i == n:
+        print("Found")
