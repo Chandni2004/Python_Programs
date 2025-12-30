@@ -1,0 +1,5 @@
+n=[5,10,20]
+if type(n)==list:
+    print(f"{n} is a list")
+else:
+    print(f"{n} is a non list")
