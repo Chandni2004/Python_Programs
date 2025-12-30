@@ -1,6 +1,0 @@
-s = "Hello"
-v = 0
-for ch in s:
-    if ch in "aeiouAEIOU":
-        v += 1
-print(v)
