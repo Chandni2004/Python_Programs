@@ -1,0 +1,6 @@
+def area():
+    l = 5
+    b = 4
+    return l * b
+
+print(area())
