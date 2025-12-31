@@ -1,0 +1,20 @@
+student={
+    'Name' :  "Sai",
+    'R.No' : 10,
+    'Age' : 20
+}
+for i in student.items():
+    print(f"{i[0]} is {i[1]}")
+
+for k,v in student.items():
+    print(f"{k} is {v}")
+
+for k in student.keys():
+    print(f"{k} is {student[k]}")
+
+Output:
+Name is Sai
+R.No is 10
+Age is 20
+
+
