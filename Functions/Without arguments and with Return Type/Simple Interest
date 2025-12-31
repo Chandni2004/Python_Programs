@@ -1,0 +1,7 @@
+def si():
+    p = 1000
+    t = 2
+    r = 5
+    return (p * t * r) / 100
+
+print(si())
