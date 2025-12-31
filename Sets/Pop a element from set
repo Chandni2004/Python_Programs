@@ -1,0 +1,4 @@
+s={9,8,3,4,5,6,7}
+k=s.pop()
+print(f"Deleted element is {k}")
+print(s)
