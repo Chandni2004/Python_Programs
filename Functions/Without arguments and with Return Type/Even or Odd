@@ -1,0 +1,5 @@
+def even_odd():
+    n = 9
+    return "Even" if n % 2 == 0 else "Odd"
+
+print(even_odd())
