@@ -1,0 +1,9 @@
+def dict_count(x):
+    cnt=0
+    for i in x.items():
+        cnt+=1
+    return cnt
+student={'Name' :  "Chandni",'R.No' : 10,'Age' : 20}
+count=dict_count(student)
+print(f"Number of items in Student dictionary are {count}") #Number of items in Student dictionary are 3
+
