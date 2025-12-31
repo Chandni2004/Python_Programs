@@ -1,0 +1,18 @@
+def display(x):
+    if type(x)==list:
+        for i in x:
+            print(i)
+    elif type(x)==dict:
+        for k in x.keys():
+            print(f"{k} is {x[k]}")
+    else:
+        print(x)
+        
+student={'Name' :  "Chandni",'R.No' : 10,'Age' : 20}
+display(student)
+l=[10,20,30]
+display(l)
+t=(10,20,30)
+display(t)
+s="ThundersSoft"
+display(s)
