@@ -1,5 +1,5 @@
 student={
-    'Name' :  "Sai",
+    'Name' :  "Chandni",
     'R.No' : 10,
     'Age' : 20
 }
@@ -13,7 +13,7 @@ for k in student.keys():
     print(f"{k} is {student[k]}")
 
 Output:
-Name is Sai
+Name is Chandni
 R.No is 10
 Age is 20
 
