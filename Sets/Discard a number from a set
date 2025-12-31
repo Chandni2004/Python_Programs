@@ -1,7 +1,3 @@
 s={1,2,3}
-try: 
-    s.discard(4)
-except:
-    print("Element is not present in the set")
-finally:
-    print("End of the Program")
+s.discard(3)
+print(s)
