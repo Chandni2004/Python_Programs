@@ -5,4 +5,4 @@ def String_count(x):
     return cnt
 s="ThunderSoft"
 count=String_count(s)
-print(f"Number of items in String are {count}") #Number of items in String are 11
+print(f"Number of characters in String are {count}") #Number of items in String are 11
