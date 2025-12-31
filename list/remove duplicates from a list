@@ -5,3 +5,11 @@ for item in list:
         print(item)
         unique.append(item)
 print(unique)
+
+
+(OR)
+
+l=[10,20,30,30,40,50]
+s=set(l)
+l=sorted(list(s))
+print(l)
