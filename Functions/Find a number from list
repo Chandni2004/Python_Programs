@@ -1,0 +1,14 @@
+def find(l,x):
+    flag=0
+    for i in l:
+        if i==x:
+            flag=1
+            break
+    return flag
+l=[10,20,30,40]
+element=20
+result=find(l,element)
+if result==1:
+    print(f"{element} is present in the list {l}")
+else:
+    print(f"{element} is not present in the list {l}")
