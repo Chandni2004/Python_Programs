@@ -1,0 +1,8 @@
+def String_count(x):
+    cnt=0
+    for i in x:
+        cnt+=1
+    return cnt
+s="ThunderSoft"
+count=String_count(s)
+print(f"Number of items in String are {count}") #Number of items in String are 11
