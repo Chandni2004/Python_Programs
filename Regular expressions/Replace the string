@@ -1,0 +1,3 @@
+import re
+string="Python is easy"
+print(re.sub("Python","Java",string))
