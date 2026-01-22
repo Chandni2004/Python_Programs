@@ -1,0 +1,4 @@
+import re
+string="Python123"
+pattern=r"\d+"
+print(re.findall(pattern,string))
