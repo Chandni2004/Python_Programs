@@ -1,0 +1,6 @@
+import re
+string="Python is easy"
+if re.match(r"^\w+",string):
+    print("Valid")
+else:
+    print("Invalid")
