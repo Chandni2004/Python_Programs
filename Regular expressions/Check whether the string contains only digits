@@ -1,0 +1,7 @@
+import re
+string="Python123"
+pattern=r"^\d+$"
+if re.match(pattern,string):
+    print("Only digits")
+else:
+    print("Not digits")
