@@ -1,0 +1,6 @@
+import re
+mob=input("Enter the mobile number: ")
+if re.match(r"^[6-9]\d{9}$",mob):
+    print("Valid")
+else:
+    print("Invalid")
