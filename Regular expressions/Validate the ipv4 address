@@ -1,0 +1,10 @@
+import re
+
+ip = input("Enter IPv4 address: ")
+
+pattern = r"^(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}$"
+
+if re.match(pattern, ip):
+    print("Valid IPv4 Address")
+else:
+    print("Invalid IPv4 Address")
