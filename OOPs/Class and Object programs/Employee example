@@ -1,18 +1,20 @@
 class Employee:
-    def __init__(self,ename,eid,esalary):
+    def __init__(self,ename,eid,esalary,designation):
         self.ename=ename
         self.eid=eid
         self.esalary=esalary
+        self.designation=designation
         
     def display(self):
         print("Name of the Employee: ",self.ename)
         print("Id of the Employee: ",self.eid)
         print("Salary of the Employee: ",self.esalary)
+        print("Designation of the Employee: ",self.designation)
     
     def __del__(self):
         print("Object Destroyed")
 
-obj1=Employee("Chandni",18,40000)
-obj2=Employee("Vijaya",4,50000)
+obj1=Employee("Chandni",18,40000,"Trainee")
+obj2=Employee("Vijaya",4,50000,"Manager")
 obj1.display()
 obj2.display()
