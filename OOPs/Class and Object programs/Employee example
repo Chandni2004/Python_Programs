@@ -17,4 +17,6 @@ class Employee:
 obj1=Employee("Chandni",18,40000,"Trainee")
 obj2=Employee("Vijaya",4,50000,"Manager")
 obj1.display()
+print("------------------")
 obj2.display()
+print("------------------")
