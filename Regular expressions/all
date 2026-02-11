@@ -1,0 +1,14 @@
+import re
+text="""gmail:sasikanth123@gmail.com
+mobile_no:9346099386
+pincode:521226,512227"""
+gmail_pattern=r'\b[0-9 a-z A-Z]*@gmail.com\b'
+mobile_pattern=r'\b[7-9]\d{9}\b'
+pincode_pattern=r'\b[5]\d{5}\b'
+print(re.findall(gmail_pattern,text))
+print(re.findall(mobile_pattern,text))
+print(re.findall(pincode_pattern,text))
+
+
+
+
