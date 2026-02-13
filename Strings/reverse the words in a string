@@ -3,3 +3,16 @@ words = sentence.split()
 reversed_words = words[::-1]     
 result = ' '.join(reversed_words)  
 print("Reversed sentence:", result)
+
+
+str="i am learning python"
+result=str[::-1]
+print(result)
+l=str.split()
+# print(l)
+result=""
+for i in l:
+    # print(i)
+    result=result +" "+ i[::-1]
+    # print(result)
+print(result)
