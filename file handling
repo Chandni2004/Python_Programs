@@ -1,0 +1,90 @@
+content="""
+we are learning python. 
+python is easy to learn.
+many AI programs are implemented by using python
+below are error codes we use in  python programs
+ERR_GENERIC
+ERR_UNKNOWN
+ERR_INVALID_ARG
+ERR_INVALID_PARAM
+ERR_NULL_POINTER
+ERR_OUT_OF_RANGE
+ERR_TIMEOUT
+ERR_BUSY
+ERR_NOT_READY
+ERR_NOT_SUPPORTED
+ERR_NOT_IMPLEMENTED
+ERR_PERMISSION_DENIED
+ERR_ACCESS_DENIED
+ERR_AUTH_FAILED
+ERR_UNAUTHORIZED
+ERR_FORBIDDEN
+ERR_RESOURCE_UNAVAILABLE
+ERR_RESOURCE_EXHAUSTED
+ERR_MEMORY_ALLOCATION_FAILED
+ERR_MEMORY_LEAK
+ERR_BUFFER_OVERFLOW
+ERR_STACK_OVERFLOW
+ERR_HEAP_CORRUPTION
+ERR_FILE_NOT_FOUND
+ERR_FILE_OPEN_FAILED
+ERR_FILE_READ_FAILED
+ERR_FILE_WRITE_FAILED
+ERR_DIVIDE_BY_ZERO
+ERR_ARITHMETIC
+ERR_STATE_INVALID
+ERR_STATE_MISMATCH
+ERR_SEQUENCE_ERROR
+ERR_CONCURRENCY
+ERR_RACE_CONDITION
+ERR_DEADLOCK
+ERR_LOCK_FAILED
+ERR_MUTEX_FAILED
+"""
+with open("sample.txt","w") as f:
+    f.write(content)
+print("created")
+
+# 1 print count and all the lines contains "python"
+try:
+    count = 0
+    with open("sample.txt", "r") as file:
+        for line in file:
+            if "python" in line:
+                print(line.strip())
+                count += 1
+
+    print("Count:", count)
+
+except FileNotFoundError:
+    print("File not found!")
+
+except Exception as Ex:
+    print("Error occurred:", Ex)
+
+# 2 Replace "python" with "Perl"
+
+with open("sample.txt","r") as file1:
+    data=file1.read()
+data=data.replace("python","Perl")
+
+with open("sample.txt","w") as file1:
+    file1.write(data)
+print(data)
+
+# 3 print all words started "ERR_" and ends with "D"
+
+import re
+
+try:
+    with open("sample.txt", "r") as file:
+        data = file.read()
+
+    pattern = r"\bERR_.*?D\b"
+    matches = re.findall(pattern, data)
+
+    for word in matches:
+        print(word)
+
+except FileNotFoundError:
+    print("File not found")
