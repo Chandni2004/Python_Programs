@@ -75,7 +75,6 @@ print(data)
 # 3 print all words started "ERR_" and ends with "D"
 
 import re
-
 try:
     with open("sample.txt", "r") as file:
         data = file.read()
